@@ -1,0 +1,24 @@
+.card {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 150%;
+  left: -2rem;
+  top: 0;
+  background: #b5baca;
+}
+
+.card:last-child::before {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin-left: 4.5rem;
+  }
+}
