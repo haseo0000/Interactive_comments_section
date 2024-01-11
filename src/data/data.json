@@ -19,36 +19,7 @@
         },
         "username": "amyrobson"
       },
-      "replies": [
-        {
-          "id": 5,
-          "content": "Bello my name is Superman, I am a super heores",
-          "createdAt": "5 mins ago",
-          "score": 25,
-          "replyingTo": "amyrobson",
-          "user": {
-            "image": {
-              "png": "/images/avatars/image-juliusomo.png",
-              "webp": "/images/avatars/image-juliusomo.webp"
-            },
-            "username": "juliusomo"
-          }
-        },
-        {
-          "id": 6,
-          "content": "That's is so cool. :D",
-          "createdAt": "1 mins ago",
-          "score": 100,
-          "replyingTo": "juliusomo",
-          "user": {
-            "image": {
-              "png": "/images/avatars/image-juliusomo.png",
-              "webp": "/images/avatars/image-juliusomo.webp"
-            },
-            "username": "Batman"
-          }
-        }
-      ]
+      "replies": []
     },
     {
       "id": 2,

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import styles from "./buttonAddAndDecreaseScore.module.css";
 import Button from "./button";
 import { AllComemntsContext } from "@/context/AllCommentsProvider";
 
@@ -6,19 +7,17 @@ type Props = {
   id: number;
   parentCommentId: number;
   score: number;
-  classNames?: string;
 };
 
-function ButtonAddAndDecreaseScore({ id, parentCommentId, score, classNames }: Props) {
+function ButtonAddAndDecreaseScore({ id, parentCommentId, score }: Props) {
   const { handleAddScore, handleDecresesScore } = useContext(AllComemntsContext);
 
   return (
-    <div className={classNames}>
+    <div className={styles.container}>
       <Button
         handle={() => handleAddScore(id, parentCommentId!)}
         pathImg="/images/icon-plus.svg"
         altImg="plus-img"
-        classNames="p-2"
         width={12}
         height={12}
       />
@@ -27,7 +26,6 @@ function ButtonAddAndDecreaseScore({ id, parentCommentId, score, classNames }: P
         handle={() => handleDecresesScore(id, parentCommentId!)}
         pathImg="/images/icon-minus.svg"
         altImg="minus-img"
-        classNames="p-2"
         width={12}
         height={12}
       />

@@ -22,7 +22,7 @@ function TextArea({ replyTo, content, status }: Props) {
   }
 
   return (
-    <div className="flex-1 border-[2px] border-gray-400 p-4 rounded-[10px] h-[120px] ">
+    <div className={styles.container}>
       <textarea
         className={styles.scroll}
         onChange={(e) => setComment(e.target.value)}

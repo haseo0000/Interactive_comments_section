@@ -21,9 +21,6 @@ function Card({ comment, currentUser, isHaveReply, parentCommentId }: CommentPro
   const isClickReply = replyId === comment.id;
   const isEdit = editId === comment.id;
 
-  const ButtonAddAndDecreaseScore__Style =
-    "md:flex-col items-center flex bg-[#f5f6fb] p-2 rounded-xl gap-[5px]";
-
   return (
     <>
       <div
@@ -35,7 +32,6 @@ function Card({ comment, currentUser, isHaveReply, parentCommentId }: CommentPro
             id={comment.id}
             parentCommentId={parentCommentId!}
             score={comment.score}
-            classNames={ButtonAddAndDecreaseScore__Style}
           />
         </section>
         <section className="grid gap-[1rem]">
@@ -50,7 +46,6 @@ function Card({ comment, currentUser, isHaveReply, parentCommentId }: CommentPro
               id={comment.id}
               parentCommentId={parentCommentId!}
               score={comment.score}
-              classNames={ButtonAddAndDecreaseScore__Style}
             />
             <InteractCommentSection
               isCurrentUser={isCurrentUser}

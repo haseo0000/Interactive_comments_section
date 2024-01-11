@@ -1,3 +1,11 @@
 .scroll::-webkit-scrollbar {
   display: none;
 }
+
+.container {
+  flex: 1;
+  border: 2px solid rgb(156, 163, 175);
+  border-radius: 10px;
+  padding: 1rem;
+  height: 120px;
+}
