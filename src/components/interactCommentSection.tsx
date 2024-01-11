@@ -19,14 +19,12 @@ function InteractCommentSection({ isCurrentUser, commentId }: Props) {
             pathImg="/images/icon-delete.svg"
             altImg="delete-img"
             name="Delete"
-            classNames="gap-[5px]"
           />
           <Button
             handle={() => handleEditId(commentId)}
             pathImg="/images/icon-edit.svg"
             altImg="edit-img"
             name="Edit"
-            classNames="gap-[5px]"
           />
         </>
       ) : (
@@ -35,7 +33,6 @@ function InteractCommentSection({ isCurrentUser, commentId }: Props) {
           pathImg="/images/icon-reply.svg"
           altImg="reply-img"
           name="REPLY"
-          classNames="gap-[5px]"
         />
       )}
     </div>
