@@ -11,7 +11,7 @@ function InteractCommentSection({ isCurrentUser, commentId }: Props) {
   const { handleReplyId, handleEditId } = useContext(AllComemntsContext);
 
   return (
-    <div className="flex gap-[20px]">
+    <div className="flex">
       {isCurrentUser ? (
         <>
           <Button

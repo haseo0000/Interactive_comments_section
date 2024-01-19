@@ -12,6 +12,7 @@ interface IAllComemntsContext {
   currentUser: IUser;
   handleAddScore: (id: number, parentCommentId: number) => void;
   handleDecresesScore: (id: number, parentCommentId: number) => void;
+  handleEditComment: (content: string, parentCommentId: number) => void;
 }
 
 type AllCommentsProviderProps = {
@@ -88,6 +89,35 @@ export default function AllCommnetsProvider({ children }: AllCommentsProviderPro
     return setComments(output);
   };
 
+  const handleEditComment = (content: string, parentCommentId: number) => {
+    const output = [...comments].map((obj) => {
+      if (obj.id === parentCommentId) {
+        const updateReply = obj.replies?.map((reply) => {
+          if (reply.id === editId) {
+            return { ...reply, content };
+          }
+          return reply;
+        });
+
+        return { ...obj, replies: updateReply };
+      }
+      return obj;
+    });
+
+    setComments(output);
+    setEditIdId(null);
+  };
+
+  // TODO: Reply Comment !!!
+
+  // const handleReplyComment = (id: number, content: string, parentCommentId?: number) => {
+  //   const temp = [...comments].map((comment) => {
+  //     if (comment.id === id) {
+  //       return comment.replies.push()
+  //     }
+  //   })
+  // }
+
   return (
     <AllComemntsContext.Provider
       value={{
@@ -99,6 +129,7 @@ export default function AllCommnetsProvider({ children }: AllCommentsProviderPro
         currentUser,
         handleAddScore,
         handleDecresesScore,
+        handleEditComment,
       }}>
       {children}
     </AllComemntsContext.Provider>

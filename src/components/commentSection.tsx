@@ -2,23 +2,37 @@ import TextArea from "@/ui-components/textArea";
 import React from "react";
 
 type Props = {
-  replyingTo: string;
-  content: string;
+  commentDetails: IComment;
   isEdit?: boolean;
+  parentCommentId: number;
 };
 
-function CommentSection({ replyingTo, content, isEdit = false }: Props) {
+function CommentSection({ commentDetails, isEdit = false, parentCommentId }: Props) {
+  const { content, replyingTo } = commentDetails;
+
   return (
-    <section>
+    <section className="grid gap-3">
       {isEdit ? (
-        <TextArea content={content} replyTo={replyingTo} status="EDIT" />
+        <TextArea
+          content={content}
+          replyTo={replyingTo}
+          parentId={parentCommentId}
+          status="EDIT"
+        />
       ) : (
-        <>
-          {replyingTo && (
-            <span className="text-[#5055af] font-bold">@ {replyingTo} </span>
-          )}
-          <span>{content}</span>
-        </>
+        <span>
+          {replyingTo && <span className="text-[#5055af] font-bold">@{replyingTo} </span>}
+          {content.split(" ").map((item, idx) => {
+            if (item[0] === "@") {
+              return (
+                <span key={idx} className="text-[#5055af] font-bold">
+                  {item + " "}
+                </span>
+              );
+            }
+            return <span key={idx}>{item + " "}</span>;
+          })}
+        </span>
       )}
     </section>
   );

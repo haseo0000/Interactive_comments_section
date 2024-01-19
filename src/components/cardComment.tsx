@@ -37,9 +37,9 @@ function Card({ comment, currentUser, isHaveReply, parentCommentId }: CommentPro
         <section className="grid gap-[1rem]">
           <DetailsCommentSection commentDetails={comment} isCurrentUser={isCurrentUser} />
           <CommentSection
-            replyingTo={comment.replyingTo!}
-            content={comment.content}
+            commentDetails={comment}
             isEdit={isEdit}
+            parentCommentId={parentCommentId!}
           />
           <section className="md:hidden flex justify-between">
             <ButtonAddAndDecreaseScore

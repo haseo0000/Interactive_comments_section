@@ -5,10 +5,10 @@ import AllCommnetsProvider from "@/context/AllCommentsProvider";
 export default function Home() {
   return (
     <AllCommnetsProvider>
-      <main>
-        <AllComments />
-        <CreateComment />
-      </main>
+      {/* <main> */}
+      <AllComments />
+      <CreateComment />
+      {/* </main> */}
     </AllCommnetsProvider>
   );
 }

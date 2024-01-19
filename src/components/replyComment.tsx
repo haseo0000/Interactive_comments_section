@@ -15,9 +15,6 @@ function ReplyComment({ replyTo, currentUserImg, isCreated }: Props) {
     <>
       <Image src={currentUserImg} alt="user-img" width={40} height={40} />
       <TextArea replyTo={replyTo} status={isCreated ? "CREATE" : "REPLY"} />
-      <button className="px-6 py-2 bg-[#5055af] rounded-[10px] text-white" type="button">
-        {isCreated ? "SEND" : "REPLY"}
-      </button>
     </>
   );
 }
